@@ -1,0 +1,28 @@
+header img {
+  height: 2cm;
+  width: 2cm;
+  position: absolute;
+  left: 1cm;
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: green;
+  padding: 5px;
+  width: 400px;
+  position: absolute;
+  right: 500px;
+}
+header nav div {
+  display: flex;
+  align-items: center;
+  margin: 10px 20px;
+  width: 200px;
+}
+body {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: url(/img/airplane-flying-cloudy-sky.jpg);
+}
