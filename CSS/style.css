@@ -20,9 +20,18 @@ header nav div {
   margin: 10px 20px;
   width: 200px;
 }
-body {
+.quo {
+  font-size: xx-large;
   position: absolute;
-  top: 0px;
-  left: 0px;
-  background-image: url(/img/airplane-flying-cloudy-sky.jpg);
+  top: 3cm;
+  left: 700px;
+  color: blue;
+}
+.login-page {
+  position: absolute;
+}
+body {
+  background-image: url(../IMG/airplane-flying-cloudy-sky.png);
+  background-repeat: no-repeat;
+  background-size: 1600px 800px;
 }
