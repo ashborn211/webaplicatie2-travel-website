@@ -29,9 +29,12 @@ header nav div {
 }
 .login-page {
   position: absolute;
+  right: 3cm;
+  border: none; /* Remove the block around the element */
+  font-family: Arial, sans-serif; /* Change the font */
 }
 body {
   background-image: url(../IMG/airplane-flying-cloudy-sky.png);
   background-repeat: no-repeat;
-  background-size: 1600px 800px;
+  background-size: 100%;
 }
