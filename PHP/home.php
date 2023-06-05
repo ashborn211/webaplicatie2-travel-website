@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      
+      <a href="/PHP/Home.html"
         ><img src="../IMG/pngwing.com.png" alt="Home"
       /></a>
       <nav class="top-bar">
@@ -17,7 +17,8 @@
         <div>Schedule</div>
         <div>Transport and directions</div>
       </nav>
-      <button><a href="login-register/login.php"> log in</button></a>
+      <h1 class="quo">Ready To Fly?</h1>
+      <button class="login-page">log in</button>
     </header>
     <main></main>
   </body>
