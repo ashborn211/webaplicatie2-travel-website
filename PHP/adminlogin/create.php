@@ -47,10 +47,10 @@ if(isset($_POST["submit"])){
     <header>
     <a href="../home.php"><img src="../IMG/pngwing.com.png" alt="Home"/></a>
 
-      <nav class="top-bar">
-        <div>All flights</div>
-        <div>Schedule</div>
-        <div>Transport and directions</div>
+    <nav class="top-bar">
+        <div><a href="create.php">create</div></a>
+        <div><a href="update.php">update</div></a>
+        <div><a href="delete.php">delete</div></a>
       </nav>
     </header>
     <main>

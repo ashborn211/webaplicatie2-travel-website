@@ -13,6 +13,7 @@
 
       <nav class="top-bar">
         <div><a href="flights.php">All flights</div></a>
+        <div><a href="boeken.php">boeken</div></a>
         <div>Schedule</div>
         <div>Transport and directions</div>
       </nav>

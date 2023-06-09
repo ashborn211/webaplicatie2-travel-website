@@ -14,9 +14,10 @@ require_once('loginhelper.php');
   </head>
   <body>
     <header>
-      <a href="../home.php"><img src="../IMG/pngwing.com.png" alt="Home"/></a>
+      <a href="../home.php"><img src="../../IMG/pngwing.com.png" alt="Home"/></a>
       <nav class="top-bar">
-        <div>All flights</div>
+        <div><a href="flights.php">All flights</div></a>
+        <div><a href="boeken.php">boeken</div></a>
         <div>Schedule</div>
         <div>Transport and directions</div>
       </nav>
