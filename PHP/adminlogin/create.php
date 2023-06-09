@@ -3,7 +3,7 @@
    include_once('../dbconnect.php');
    include_once('../login-register/loginhelper.php');
    if(isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true){
-    header('location: ../home.php');
+    
    }
 if(isset($_POST["submit"])){
     $countryname = $_POST['countryname'];

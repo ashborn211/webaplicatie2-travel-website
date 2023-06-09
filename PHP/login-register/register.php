@@ -29,7 +29,7 @@ if(isset($_POST["submit"])){
   </head>
   <body>
     <header>
-      <a href="../home.php"><img src="../IMG/pngwing.com.png" alt="Home"/></a>
+      <a href="../home.php"><img src="../../IMG/pngwing.com.png" alt="Home"/></a>
 
       <nav class="top-bar">
         <div>All flights</div>
