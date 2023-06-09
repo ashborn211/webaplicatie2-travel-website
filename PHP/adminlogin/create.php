@@ -1,5 +1,10 @@
 <?php
-
+/*hier word er gekeken of er een connectie is met de database en dat je de juiste inloggegevens gebruikt hebt voor admin rechten*/
+   include_once('../dbconnect.php');
+   include_once('../../inloggenhelper.php');
+   if(isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true){
+    header('location: ../home.php');
+   }
 if(isset($_POST["submit"])){
     $countryname = $_POST['countryname'];
    
@@ -40,8 +45,8 @@ if(isset($_POST["submit"])){
   </head>
   <body>
     <header>
-        <img src="../../IMG/pngwing.com.png" alt="Home"
-      /></a>
+    <a href="../home.php"><img src="../IMG/pngwing.com.png" alt="Home"/></a>
+
       <nav class="top-bar">
         <div>All flights</div>
         <div>Schedule</div>

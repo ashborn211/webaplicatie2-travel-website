@@ -1,5 +1,6 @@
 <?php
 require_once('../dbconnect.php');
+require_once('loginhelper.php');
 ?>
 <!DOCTYPE html>
 
@@ -13,8 +14,7 @@ require_once('../dbconnect.php');
   </head>
   <body>
     <header>
-        <img src="../../IMG/pngwing.com.png" alt="Home"
-      /></a>
+      <a href="../home.php"><img src="../IMG/pngwing.com.png" alt="Home"/></a>
       <nav class="top-bar">
         <div>All flights</div>
         <div>Schedule</div>
@@ -23,10 +23,10 @@ require_once('../dbconnect.php');
     </header>
     <main>
 
-        <form action="" method="post">
-            <input type="username" name="email" id="" >
-            <input type="emailadress" name="emailadress" id="" >
-            <input type="password" name="password" id="">
+        <form action="" method="post" class = "LoginRegister">
+            <input type="username" name="email" >
+            <input type="emailadress" name="emailadress" >
+            <input type="password" name="password" >
             <input type="submit" value="login">
         </form>
 

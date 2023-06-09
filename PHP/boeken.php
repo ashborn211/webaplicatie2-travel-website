@@ -5,15 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../CSS/style.css" />
-    <title>home</title>
+    <title>boeken</title>
   </head>
   <body>
     <header>
       <a href="home.php"><img src="../IMG/pngwing.com.png" alt="Home"/></a>
-      
+
       <nav class="top-bar">
         <div><a href="flights.php">All flights</div></a>
-        <div><a href="boeken.php"></div>boeken</a>
         <div>Schedule</div>
         <div>Transport and directions</div>
       </nav>
@@ -22,3 +21,4 @@
     </header>
     <main></main>
   </body>
+  </html>
