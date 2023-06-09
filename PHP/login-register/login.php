@@ -25,9 +25,9 @@ require_once('loginhelper.php');
     <main>
 
         <form action="" method="post" class = "LoginRegister">
-            <input type="username" name="email" >
-            <input type="emailadress" name="emailadress" >
-            <input type="password" name="password" >
+            <input type="username" name="username" placeholder="username">
+            <input type="emailadress" name="emailadress" placeholder="email">
+            <input type="password" name="password" placeholder="password">
             <input type="submit" value="login">
         </form>
 

@@ -1,7 +1,7 @@
 <?php
 /*hier word er gekeken of er een connectie is met de database en dat je de juiste inloggegevens gebruikt hebt voor admin rechten*/
    include_once('../dbconnect.php');
-   include_once('../../inloggenhelper.php');
+   include_once('../login-register/loginhelper.php');
    if(isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true){
     header('location: ../home.php');
    }
@@ -56,9 +56,9 @@ if(isset($_POST["submit"])){
     <main>
 
         <form action="" method="post">
-            <input type="countryname" name="countryname" id="" >
-            <input type="placename" name="placename" id="" >
-            <input type="countryid" name="countryid" id="">
+            <input type="countryname" name="countryname" id="" placeholder="countryname">
+            <input type="placename" name="placename" id=""placeholder="placename" >
+            <input type="countryid" name="countryid" id=""placeholder="countryid">
             <input type="submit" value="login" onClick='return confirmSubmit()'>
         </form>
 
