@@ -12,8 +12,30 @@ if(isset($_POST['username']) && isset($_POST['password']) && $_POST(["emailadres
         $username = $_POST['username'];
         $password = $_POST['password'];
         $emailadress = $_POST['emailadress'];
+
+        foreach($result as $data) {
+            if($_POST["username"] == $username && $_POST["password"] == $password && $_POST["emailadress"] == $emailadress){
+                echo 'successfuly logged in';
+                echo 'welcome';
     
-        $sql = "SELECT username, password, emailadress FROM adminaccount";
+            }else{
+                if(isset($_POST['username']) && isset($_POST['password']) && $_POST(["emailadress"])){
+                    var_dump($_POST);
+                    if($_POST['username'] == ""){
+                        echo 'email can\'t be empty <br>';
+                    }
+                    if($_POST['password'] == ""){
+                        echo 'password can\'t be empty <br>';
+                    }
+                    if($_POST['emailadress'] == ""){
+                        echo 'password can\'t be empty <br>';
+                    }
+                }
+               
+            }
+    ?>
+    <?php
+        $sql = "SELECT username, password, emailadress FROM adminaccount BY id ASC ";
         $stmt = $connect->prepare($sql);
         $stmt -> FetchAll(PDO::FETCH_ASSOC);
         $stmt->execute();
@@ -25,15 +47,12 @@ if(isset($_POST['username']) && isset($_POST['password']) && $_POST(["emailadres
 
 
     foreach($result as $data) {
-        if($_POST["username"] == $username && $_POST["password"] == $password && $_POST["emailadress"] == $emailadress){
-            echo 'successfuly logged in';
-            echo 'welcome';
-
-        }else if($_POST["username"] == $adminname && $_POST["password"] == $adminpassword && $_POST["emailadress"] == $adminemailadress){
+        if($_POST["username"] == $adminname && $_POST["password"] == $adminpassword && $_POST["emailadress"] == $adminemailadress){
             echo 'successfuly logged in';
             echo 'welcome admin';
             header("location: ../adminlogin/create.php");
-        } 
+
+        }
         
         else{
             if(isset($_POST['username']) && isset($_POST['password']) && $_POST(["emailadress"])){
@@ -52,7 +71,7 @@ if(isset($_POST['username']) && isset($_POST['password']) && $_POST(["emailadres
         }
 
     }
-    
+}
     
     }else{
         header('login.php');
