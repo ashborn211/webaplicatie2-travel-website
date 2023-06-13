@@ -1,10 +1,10 @@
 <?php
 /*hier word er gekeken of er een connectie is met de database en dat je de juiste inloggegevens gebruikt hebt voor admin rechten*/
-   include_once('../dbconnect.php');
-   include_once('../login-register/loginhelper.php');
-   if(isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true){
-    header('location: ../home.php');
-   }
+include_once('../dbconnect.php');
+include_once('../login-register/loginhelper.php');
+if(isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true){
+ 
+}
 if(isset($_POST["submit"])){
     $id = $_POST['id'];
     $countryid = $_POST['countryid'];
