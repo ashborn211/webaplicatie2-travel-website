@@ -40,12 +40,38 @@ if(isset($_POST["submit"])){
     </header>
     <main>
 
-        <form action="" method="post">
-        <input type="username" name="email" id="" >
-            <input type="emailadress" name="emailadress" id="" >
-            <input type="password" name="password" id="">
-            <input type="submit" value="login">
-        </form>
+    <form action="" method="post">
+    <div class="login-box">
+      <h2>Login</h2>
+      <div class="input-field">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+        />
+      </div>
+      <div class="input-field">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+        />
+      </div>
+      <div class="input-field">
+        <label for="username">username:</label>
+        <input
+          type="username"
+          id="username"
+          name="username"
+          placeholder="Enter your username"
+        />
+      </div>
+      <button type="submit" onClick='return confirmSubmit()'>register</button>
+      </form>
         
     </main>
   </body>
