@@ -18,7 +18,11 @@
         <div>Transport and directions</div>
       </nav>
       <h1 class="quo">Ready To Fly?</h1>
+<<<<<<< HEAD
+      <a class="login-page" href="login.php"></a>
+=======
       <button class="login-page"><a href="login-register/login.php">Login</button></a>
+>>>>>>> cc0ee55bbb3f32388b8f2c987eaa360c961c2ecf
     </header>
     <main></main>
   </body>
