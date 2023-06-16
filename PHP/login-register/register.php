@@ -1,5 +1,7 @@
 <?php
 require_once('../dbconnect.php');
+require ('registerhelper.php');
+
 
 if(isset($_POST["submit"])){
     $username = $_POST['username'];
@@ -14,7 +16,7 @@ if(isset($_POST["submit"])){
     $stmt->bindParam(":emailadress", $_POST['emailadress']);     
     $stmt->bindParam(":password", $_POST['password']);     
     $stmt->execute();
-    header("location: register.php");
+    header("location: login.php");
 }
 ?>
 <!DOCTYPE html>
