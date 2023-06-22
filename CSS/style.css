@@ -43,7 +43,6 @@ body {
   background-size: 100%;
 }
 
-<<<<<<< HEAD
 /* Full-width input fields */
 input[type="email"],
 input[type="password"] {
@@ -51,7 +50,6 @@ input[type="password"] {
   input[type="email"],
   input[type="password"],
   input[type="username"] {
-=======
 
 /* Full-width input fields */
 input[type="emailadress"],
@@ -195,7 +193,6 @@ body div button {
     float: none;
   }
   .cancelbtn {
->>>>>>> 7008997bc08d9e5ff29c0936460f5b09ed730e6e
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -203,11 +200,9 @@ body div button {
     border: 1px solid #ccc;
     box-sizing: border-box;
   }
-<<<<<<< HEAD
 
   button:hover {
     opacity: 0.8;
-=======
 }
 
 
@@ -309,7 +304,6 @@ body div button {
 @-webkit-keyframes animatezoom {
   from {
     -webkit-transform: scale(0);
->>>>>>> 7008997bc08d9e5ff29c0936460f5b09ed730e6e
   }
 
   /* Extra styles for the cancel button */
@@ -576,7 +570,3 @@ body div button {
     }
   }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 7008997bc08d9e5ff29c0936460f5b09ed730e6e
