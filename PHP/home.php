@@ -28,7 +28,7 @@
       <a class="login-page" href="Login.html"><button>Login</button></a>
     </header>
     <main>
-      <h1 class="quo">Ready To Fly?</h1>
+      <h1 class="quo"><button>Ready To Fly?</button></h1>
     </main>
   </body>
 </html>
