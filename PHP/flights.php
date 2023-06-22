@@ -1,6 +1,13 @@
 <?php
 require_once('dbconnect.php');
 
+
+$sql = "SELECT id, name, prijs, date, path FROM destinations ORDER BY id ASC";
+$stmt = $connect->prepare($sql);
+$stmt -> FetchAll(PDO::FETCH_ASSOC);
+$stmt->execute();
+$result = $stmt ->FetchAll(PDO::FETCH_ASSOC);
+        
 ?>
 
 
@@ -28,7 +35,22 @@ require_once('dbconnect.php');
     </header>
     <main>
 
-
+    <table>
+        <?php
+        
+             foreach($result as $data) {
+               
+               ?>
+                <tr>
+               <td><?php echo $data['id']; ?> </td>
+               <td><?php echo $data['name']; ?> </td>
+               <td><?php echo $data['prijs']; ?> </td>
+               <td><?php echo $data['date']; ?> </td>
+                </tr>
+                <?php
+              }
+              ?>
+            </table>
 
 
 

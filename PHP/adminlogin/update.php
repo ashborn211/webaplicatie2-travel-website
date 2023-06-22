@@ -41,7 +41,7 @@ if(isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true){
   </head>
   <body>
     <header>
-    <a href="../home.php"><img src="../IMG/pngwing.com.png" alt="Home"/></a>
+    <a href="../home.php"><img src="../../IMG/pngwing.com.png" alt="Home"/></a>
 
     <nav class="top-bar">
         <div><a href="create.php">create</div></a>

@@ -4,7 +4,7 @@ var_dump($_POST);
 if (isset($_SESSION['LOGGED_IN']) && $_SESSION['LOGGED_IN'] == true) {
     header("Location: ../adminlogin/create.php");
 }    
-$data = $connect->query("SELECT * FROM users")->fetchAll(); 
+$data = $connect->query("SELECT * FROM adminaccount")->fetchAll(); 
 
 foreach ($data as $row){
     if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emailadress'])){
