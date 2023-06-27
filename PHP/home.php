@@ -10,22 +10,27 @@
   </head>
   <body>
     <header>
-      <a href="/PHP/Home.html"
+      <a href="/PHP/Home.php"
         ><img src="../IMG/pngwing.com.png" alt="Home"
       /></a>
       <nav class="top-bar">
-        <div>
-          <a href="All-Flights.html"><button>All flights</button></a>
+        <div class="flex-container">
+          <a href="All-Flights.php"><button>All flights</button></a>
         </div>
-        <div>
-          <a href="Schedule.html"><button>Schedule</button></a>
+        <div class="flex-container">
+          <a href="Schedule.php"><button>Schedule</button></a>
         </div>
-        <div>
-          <a href="About-US.html"><button>About US</button></a>
+        <div class="flex-container">
+          <a href="About-US.php"><button>About US</button></a>
+        </div>
+        <div class="flex-container">
+          <a href="Contact.php"><button>Contact</button></a>
         </div>
       </nav>
 
-      <a class="login-page" href="Login.html"><button>Login</button></a>
+      <a class="login-page" href="./login-register/login.php"
+        ><button>Login</button></a
+      >
     </header>
     <main>
       <h1 class="quo"><button>Ready To Fly?</button></h1>
