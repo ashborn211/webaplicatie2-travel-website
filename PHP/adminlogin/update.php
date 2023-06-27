@@ -8,18 +8,19 @@ if(isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true){
 
 /*dit zorgt ervoor dat als je op submit drukt dat de database word bewerkt */
      if(isset($_POST["submit"])){
-        $naam = $_POST['naam'];
+        $naam = $_POST['countryname'];
         $prijs = $_POST['prijs'];
-        $beschrijving = $_POST['beschrijving'];
+        $countryId = $_POST['countryid'];
 
         
 
       $sql = "UPDATE country SET
-          name = :countryname,
+          countryname = :countryname,
           WHERE ID = :id";
       $stmt = $connect->prepare($sql);   
-      $stmt->bindParam(":id", $_POST['id']);   
-      $stmt->bindParam(":naam", $_POST['name']);     
+      $stmt->bindParam(":countryid", $_POST['countryid']);   
+      $stmt->bindParam(":naam", $_POST['countryname']);     
+      $stmt->bindParam(":prijs", $_POST['prijs']);     
       $stmt->execute();
       header("location: update.php");
   }

@@ -5,20 +5,21 @@ if (isset($_POST["submit"])) {
 
 
 
+
   $username = $_POST['username'];
   $countryname = $_POST['countryname'];
-  $place = $_POST['place'];
+  $placename = $_POST['placename'];
   $price = $_POST['price'];
   $datum = $_POST['datum'];
   $tijd = $_POST['tijd'];
 
-  $sql = "INSERT  INTO boeken (username, countryname, place, price, datum, tijd)
-          VALUES (:username, :countryname, :place, :price, :datum, :tijd)";
+  $sql = "INSERT  INTO boeken (username, countryname, placename, price, datum, tijd)
+          VALUES (:username, :countryname, :placename, :price, :datum, :tijd)";
 
   $stmt = $connect->prepare($sql);
   $stmt->bindParam(":username", $_POST['username']);      
   $stmt->bindParam(":countryname", $_POST['countryname']);      
-  $stmt->bindParam(":place", $_POST['place']);      
+  $stmt->bindParam(":placename", $_POST['placename']);      
   $stmt->bindParam(":price", $_POST['price']);      
   $stmt->bindParam(":datum", $_POST['datum']);      
   $stmt->bindParam(":tijd", $_POST['tijd']);      
@@ -58,12 +59,12 @@ if (isset($_POST["submit"])) {
     <form action="" method="post">
       <input type="username" name="username" id="username" placeholder="username">
       <input type="countryname" name="countryname" id="countryname" placeholder="countryname">
-      <input type="place" name="place" id="place" placeholder="place">
+      <input type="place" name="placename" id="place" placeholder="place">
       <input type="price" name="price" id="price" placeholder="price">
-      <input type="datum" name="datum" id="datum" placeholder="datum">
-      <input type="tijd" name="tijd" id="tijd" placeholder="tijd">
+      <input type="date" name="datum" id="datum" placeholder="datum">
+      <input type="time" name="tijd" id="tijd" placeholder="tijd">
 
-      <input type="submit" value="submit" >
+      <input type="submit" value="submit" name="submit" >
     </form>
 
   </main>

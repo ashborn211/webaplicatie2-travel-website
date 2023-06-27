@@ -1,16 +1,3 @@
-<?php
-require_once('dbconnect.php');
-
-
-$sql = "SELECT id, name, prijs, date, path FROM destinations ORDER BY id ASC";
-$stmt = $connect->prepare($sql);
-$stmt -> FetchAll(PDO::FETCH_ASSOC);
-$stmt->execute();
-$result = $stmt ->FetchAll(PDO::FETCH_ASSOC);
-        
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,13 +5,12 @@ $result = $stmt ->FetchAll(PDO::FETCH_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../CSS/style.css" />
-    <title>flights</title>
+    <link rel="stylesheet" href="../CSS/cyber.css">
+    <title>US</title>
   </head>
   <body>
   <header>
     <a href="home.php"><img src="../IMG/pngwing.com.png" alt="Home" /></a>
-
-
 
     <nav class="top-bar">
         <div>
@@ -45,29 +31,5 @@ $result = $stmt ->FetchAll(PDO::FETCH_ASSOC);
       </nav>
     <h1 class="quo">Ready To Fly?</h1>
   </header>
-    <main>
-
-    <table>
-        <?php
-        
-             foreach($result as $data) {
-               
-               ?>
-                <tr>
-               <td><?php echo $data['id']; ?> </td>
-               <td><?php echo $data['name']; ?> </td>
-               <td><?php echo $data['prijs']; ?> </td>
-               <td><?php echo $data['date']; ?> </td>
-                </tr>
-                <?php
-              }
-              ?>
-            </table>
-
-
-
-
-    
-    </main>
   </body>
 </html>

@@ -2,13 +2,13 @@
 /*hier word er gekeken of er een connectie is met de database en dat je de juiste inloggegevens gebruikt hebt voor admin rechten*/
    include_once('../dbconnect.php');
    include_once('../login-register/loginhelper.php');
-   if(isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true){
-    
+   if(isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == false){
+    header('../home.php');
    }
 if(isset($_POST["submit"])){
     $countryname = $_POST['countryname'];
    
-    $sql = "INSERT INTO country (name)
+    $sql = "INSERT INTO country (naam)
             VALUES (:countryname)";
 
     $stmt = $connect->prepare($sql);
