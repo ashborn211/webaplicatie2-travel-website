@@ -85,8 +85,9 @@ if(isset($_POST["submit"])){
           placeholder="Enter your username"
         />
       </div>
-      <button type="submit" onClick='return confirmSubmit()'>register</button>
-      </form>
+      <button type="submit">Login</button>
+      <button><a href="loginadmin.php">AdminLogin</a></button>
+      <button><a href="register.php">register</a></button>      </form>
         
     </main>
   </body>

@@ -53,11 +53,8 @@ if (isset($_POST["submit"])) {
   </header>
   <main>
 
-
-
-
     <form action="" method="post">
-      <input type="username" name="username" id="username" placeholder="username">
+      <input type="user" name="username" id="username" placeholder="username">
       <input type="countryname" name="countryname" id="countryname" placeholder="countryname">
       <input type="place" name="placename" id="place" placeholder="place">
       <input type="price" name="price" id="price" placeholder="price">

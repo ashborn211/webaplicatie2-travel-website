@@ -12,7 +12,7 @@ foreach ($data as $row){
 
             $_SESSION['LOGGED_IN'] = true;
             $_SESSION['username'] = $row['username'];
-            header("Location: ../adminlogin/create.php");
+            echo 'succes';
         }
             if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emailadress'])){
                 var_dump($_POST);

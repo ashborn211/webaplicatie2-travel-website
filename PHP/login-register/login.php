@@ -12,6 +12,11 @@ require_once('loginhelper.php');
     <title>Login</title>
   </head>
   <body>
+  <header>
+      <a href="../home.php"
+        ><img src="../../IMG/pngwing.com.png" alt="Home"
+      /></a>
+      </header>
     <form action="" method="post">
     <div class="login-box">
       <h2>Login</h2>
@@ -42,7 +47,10 @@ require_once('loginhelper.php');
           placeholder="Enter your username"
         />
       </div>
-      <button type="submit" onClick='return confirmSubmit()'>Login</button>
+      <button type="submit">Login</button>
+      <button><a href="loginadmin.php">AdminLogin</a></button>
+      <button><a href="register.php">register</a></button>
+
       </form>
     </div>
   </body>

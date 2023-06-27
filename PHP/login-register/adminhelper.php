@@ -1,31 +1,26 @@
 <?php
 include_once('../dbconnect.php');
 var_dump($_POST);
-if (isset($_SESSION['LOGGED_IN']) && $_SESSION['LOGGED_IN'] == true) {
-    header("Location: ../adminlogin/create.php");
-}    
-$data = $connect->query("SELECT * FROM adminaccount")->fetchAll(); 
-
-foreach ($data as $row){
-    if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emailadress'])){
-        if($_POST['username'] == $row['username'] && $_POST['emailadress'] == $row['emailadress'] && $_POST['password'] == $row['password']){
-
-            $_SESSION['LOGGED_IN'] = true;
-            $_SESSION['username'] = $row['username'];
-            header("Location: ../adminlogin/create.php");
-        }
-            if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emailadress'])){
-                var_dump($_POST);
-                if($_POST['username'] == ""){
-                    echo 'username can\'t be empty <br>';
-                }
-                if($_POST['password'] == ""){
-                    echo 'password can\'t be empty <br>';
-                }
-                if($_POST['emailadress'] == ""){
-                    echo 'emailadress can\'t be empty <br>';
-                }
+if(isset($_POST["email"]) && isset($_POST["password"])){
+    if($_POST["email"] == 'velican@gmail.com' && 
+    $_POST["password"] == 'velican'){
+        echo 'success';
+    } else{
+        if(isset($_POST['email']) && isset($_POST['password'])){
+            var_dump($_POST);
+            if($_POST['email'] == ""){
+                echo 'email can\'t be empty <br>';
             }
+            if($_POST['password'] == ""){
+                echo 'password can\'t be empty <br>';
+            }
+            if($_POST['email'] == "admin@gmail.com" && $_POST['password'] == "12345"){
+                echo 'hello admin';
+                
+                header("Location: http://localhost/webaplicatie2-travel/webaplicatie2-travel-website/PHP/adminlogin/create.php");
+            }
+        }
+       
     }
-}   
-?>
+    }
+    ?>
