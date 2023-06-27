@@ -31,27 +31,28 @@ if(isset($_POST["submit"])){
   </head>
   <body>
   <header>
-    <a href="home.php"><img src="../IMG/pngwing.com.png" alt="Home" /></a>
-
-    <nav class="top-bar">
-        <div>
-          <a href="Flights.php"><button>All flights</button></a>
+      <a href="/PHP/Home.php"
+        ><img src="../IMG/pngwing.com.png" alt="Home"
+      /></a>
+      <nav class="top-bar">
+        <div class="flex-container">
+          <a href="All-Flights.php"><button>All flights</button></a>
         </div>
-        <div>
+        <div class="flex-container">
           <a href="Schedule.php"><button>Schedule</button></a>
         </div>
-        <div>
+        <div class="flex-container">
           <a href="About-US.php"><button>About US</button></a>
         </div>
-        <div>
-          <a href="boeken.php"><button>boeken</button></a>
-        </div>
-        <div>
-          <a href="contact.php"><button>contact us</button></a>
+        <div class="flex-container">
+          <a href="Contact.php"><button>Contact</button></a>
         </div>
       </nav>
-    <h1 class="quo">Ready To Fly?</h1>
-  </header>
+
+      <a class="login-page" href="./login-register/login.php"
+        ><button>Login</button></a
+      >
+    </header>
     <main>
 
     <form action="" method="post">
