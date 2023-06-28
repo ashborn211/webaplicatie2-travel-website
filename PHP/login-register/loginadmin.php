@@ -1,6 +1,6 @@
 <?php
 require_once('../dbconnect.php');
-require_once('loginhelper.php');
+require_once('adminhelper.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,18 +9,35 @@ require_once('loginhelper.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="../../CSS/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>admin Login</title>
   </head>
   <body>
   <header>
-      <a href="../Home.php"
+  <a href="../Home.php"
         ><img src="../../IMG/pngwing.com.png" alt="Home"
       /></a>
-  </header>
+      <nav class="top-bar">
+        <div class="flex-container">
+          <a href="All-Flights.php"><button>All flights</button></a>
+        </div>
+        <div class="flex-container">
+          <a href="Schedule.php"><button>Schedule</button></a>
+        </div>
+        <div class="flex-container">
+          <a href="About-US.php"><button>About US</button></a>
+        </div>
+        <div class="flex-container">
+          <a href="Contact.php"><button>Contact</button></a>
+        </div>
+      </nav>
 
-    <form action="" method="post">
+      <a class="login-page" href="./login-register/login.php"
+        ><button>Login</button></a
+      >
+    </header>
+  <form action="" method="post">
     <div class="login-box">
-      <h2>Login</h2>
+      <h2>admin Login</h2>
       <div class="input-field">
         <label for="email">Email:</label>
         <input
@@ -39,21 +56,12 @@ require_once('loginhelper.php');
           placeholder="Enter your password"
         />
       </div>
-      <div class="input-field">
-        <label for="username">username:</label>
-        <input
-          type="username"
-          id="username"
-          name="username"
-          placeholder="Enter your username"
-        />
-      </div>
       <button type="submit" name="submit">submit</button>
       <button><a href="login.php">Login</a></button>
       <button><a href="loginadmin.php">AdminLogin</a></button>
       <button><a href="register.php">register</a></button>
 
       </form>
-    </div>
+      </div>
   </body>
 </html>

@@ -1,79 +1,31 @@
 <?php
 include_once('../dbconnect.php');
 var_dump($_POST);
-if(isset($_POST['username']) && isset($_POST['password']) && $_POST(["emailadress"])){
-    
-    $sql = "SELECT username, password, emailadress FROM users ORDER BY id ASC";
-    $stmt = $connect->prepare($sql);
-    $stmt -> FetchAll(PDO::FETCH_ASSOC);
-    $stmt->execute();
-    $result = $stmt ->FetchAll(PDO::FETCH_ASSOC);
+if (isset($_SESSION['LOGGED_IN']) && $_SESSION['LOGGED_IN'] == true) {
+    header("Location: ../adminlogin/create.php");
+}    
+$data = $connect->query("SELECT * FROM users")->fetchAll(); 
 
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $emailadress = $_POST['emailadress'];
+foreach ($data as $row){
+    if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emailadress'])){
+        if($_POST['username'] == $row['username'] && $_POST['emailadress'] == $row['emailadress'] && $_POST['password'] == $row['password']){
 
-        foreach($result as $data) {
-            if($_POST["username"] == $username && $_POST["password"] == $password && $_POST["emailadress"] == $emailadress){
-                echo 'successfuly logged in';
-                echo 'welcome';
-    
-            }else{
-                if(isset($_POST['username']) && isset($_POST['password']) && $_POST(["emailadress"])){
-                    var_dump($_POST);
-                    if($_POST['username'] == ""){
-                        echo 'email can\'t be empty <br>';
-                    }
-                    if($_POST['password'] == ""){
-                        echo 'password can\'t be empty <br>';
-                    }
-                    if($_POST['emailadress'] == ""){
-                        echo 'password can\'t be empty <br>';
-                    }
-                }
-               
-            }
-    ?>
-    <?php
-        $sql = "SELECT username, password, emailadress FROM adminaccount BY id ASC ";
-        $stmt = $connect->prepare($sql);
-        $stmt -> FetchAll(PDO::FETCH_ASSOC);
-        $stmt->execute();
-        $result = $stmt ->FetchAll(PDO::FETCH_ASSOC);
-
-        $adminname = $_POST['username'];
-        $adminpassword = $_POST['password'];
-        $adminemailadress = $_POST['emailadress'];
-
-
-    foreach($result as $data) {
-        if($_POST["username"] == $adminname && $_POST["password"] == $adminpassword && $_POST["emailadress"] == $adminemailadress){
-            echo 'successfuly logged in';
-            echo 'welcome admin';
-            header("location: ../adminlogin/create.php");
-
+            $_SESSION['LOGGED_IN'] = true;
+            $_SESSION['username'] = $row['username'];
+            echo 'succes';
         }
-        
-        else{
-            if(isset($_POST['username']) && isset($_POST['password']) && $_POST(["emailadress"])){
+            if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emailadress'])){
                 var_dump($_POST);
                 if($_POST['username'] == ""){
-                    echo 'email can\'t be empty <br>';
+                    echo 'username can\'t be empty <br>';
                 }
                 if($_POST['password'] == ""){
                     echo 'password can\'t be empty <br>';
                 }
                 if($_POST['emailadress'] == ""){
-                    echo 'password can\'t be empty <br>';
+                    echo 'emailadress can\'t be empty <br>';
                 }
             }
-           
-        }
-
     }
-}
-    
-    }else{
-        header('login.php');
-    }
-    ?>
+}   
+?>
