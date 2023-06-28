@@ -238,3 +238,12 @@ tr:nth-child(even) {
   align-items: center;
   height: 100vh;
 }
+video {
+  height: 100px;
+  width: 50px;
+  position: absolute;
+}
+
+center {
+  font-size: xx-large;
+}

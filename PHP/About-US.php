@@ -21,9 +21,11 @@
           <div>I was born in Syria and currently live in the Netherlands, where I enjoy learning basic programming. I'm still in my first year and I enjoy making websites and games. I also enjoy going to the gym and playing video games in my spare time.</div>
 
         </div>
+        
         <div class="square2">
           <center>My name is Velican</center>
           <div>I was born in Netherlands, where I enjoy learning basic programming. I'm still in my first year and I enjoy making websites and games. I also enjoy playing video games in my spare time.</div>
+
         </div>
       </div>
     </main>
