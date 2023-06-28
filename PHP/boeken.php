@@ -1,6 +1,10 @@
 <?php
 require_once('dbconnect.php');
-
+$sql = "SELECT id, name, prijs, date, path FROM destinations ORDER BY id ASC";
+$stmt = $connect->prepare($sql);
+$stmt -> FetchAll(PDO::FETCH_ASSOC);
+$stmt->execute();
+$result = $stmt ->FetchAll(PDO::FETCH_ASSOC);
 if (isset($_POST["submit"])) {
 
   $username = $_POST['username'];
@@ -33,15 +37,16 @@ if (isset($_POST["submit"])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../CSS/style.css" />
+  <link rel="stylesheet" href="../CSS/cyber.css">
+  <link rel="stylesheet" href="../CSS/form.css">
   <title>boeken</title>
 </head>
 
 <body>
-<header>
+
     <?php
     include_once('header.php');
     ?>
-  </header>
   <main>
 
     <form action="" method="post">
