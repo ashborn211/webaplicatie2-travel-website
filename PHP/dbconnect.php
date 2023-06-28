@@ -2,8 +2,8 @@
 session_start();
 $servername = 'localhost';
 $database = 'travel-menu';
-$user = 'velican';
-$pass = 'velican009';
+$user = 'edwar';
+$pass = '12345';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$servername;dbname=$database;charset=$charset";

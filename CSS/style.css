@@ -187,3 +187,21 @@ body div button {
     width: 100%;
   }
 }
+.containerU {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.square1 {
+  width: 100px;
+  height: 100px;
+  background-color: #06c1bd;
+  margin-right: 10px;
+}
+
+.square2 {
+  width: 100px;
+  height: 100px;
+  background-color: #000072;
+}
