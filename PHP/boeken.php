@@ -1,8 +1,6 @@
 <?php
 require_once('dbconnect.php');
-<<<<<<< Updated upstream
 
-=======
 $sql = "SELECT id, name, prijs, date, path FROM destinations ORDER BY id ASC";
 $stmt = $connect->prepare($sql);
 $stmt -> FetchAll(PDO::FETCH_ASSOC);
@@ -30,7 +28,6 @@ if (isset($_POST["submit"])) {
   $stmt->execute();
   header("location: boeken.php");
 }
->>>>>>> Stashed changes
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +43,6 @@ if (isset($_POST["submit"])) {
     <header>
       <a href="home.php"><img src="../IMG/pngwing.com.png" alt="Home"/></a>
 
-<<<<<<< Updated upstream
       <nav class="top-bar">
         <div><a href="flights.php">All flights</div></a>
         <div><a href="boeken.php">boeken</div></a>
@@ -59,7 +55,6 @@ if (isset($_POST["submit"])) {
     <main></main>
   </body>
   </html>
-=======
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -116,6 +111,4 @@ if (isset($_POST["submit"])) {
   </div>
   </main>
 </body>
-
 </html>
->>>>>>> Stashed changes
