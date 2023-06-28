@@ -31,36 +31,10 @@ if(isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true){
       $stmt->bindParam(":price", $_POST['price']);     
       $stmt->bindParam(":aprove", $_POST['aprove']);    
       $stmt->execute();
-      // <input type="user" name="username" id="" placeholder="username">
-      // <input type="placename" name="placename" id="" placeholder="placename">
-      // <input type="prijs" name="price" id=""placeholder="prijs">
-      // <input type="date" name="datum" id=""placeholder="date">
-      // <input type="time" name="tijd" id=""placeholder="time">
-      // <input type="countryname" name="countryname" id=""placeholder="countryname">
-      // <input type="id" name="id" id=""placeholder="id">
-      // <input type="aprove" name="aprove" id=""placeholder="aprove">
+
       header("location: update.php");
       }
-      // elseif($_POST['change'] == 'destinations') {
-      //   $name = $_POST['name'];
-      //   $prijs = $_POST['prijs'];
-      //   $date = $_POST['date'];
-      //   $path = $_POST['path'];
-      //   $country = $_POST['country'];
-
-      //   $sql = "UPDATE destinations SET
-      //   name = :name, prijs = :prijs, date = :date, path = :path, country = :country
-      //   WHERE ID = :id";
-      // $stmt = $connect->prepare($sql);   
-      // $stmt->bindParam(":name", $_POST['name']);   
-      // $stmt->bindParam(":prijs", $_POST['prijs']);     
-      // $stmt->bindParam(":date", $_POST['date']);     
-      // $stmt->bindParam(":datum", $_POST['datum']);     
-      // $stmt->bindParam(":path", $_POST['path']);     
-      // $stmt->bindParam(":country", $_POST['country']);     
-      // $stmt->execute();
-      // header("location: update.php");
-      // }
+ 
 
   
   
@@ -104,18 +78,37 @@ if(isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true){
             <input type="aprove" name="aprove" id=""placeholder="aprove">
             <input type="submit" value="submit" name="submit" onClick='return confirmSubmit()'>
         </form>
+        <?php
 
-        <!-- <h1>destinations</h1>
-      <form action="" method="post">
-            <input type="name" name="name" id="" placeholder="placename">
-            <input type="id" name="id" id=""placeholder="id">
-            <input type="prijs" name="prijs" id=""placeholder="prijs">
-            <input type="date" name="date" id=""placeholder="date">
-            <input type="path" name="path" id=""placeholder="path">
-            <input type="country" name="country" id=""placeholder="country">
-            <input type="change" name="change" id=""placeholder="change">
-            <input type="submit" value="login" name="submit" onClick='return confirmSubmit()'>
-        </form> -->
+
+
+          $sql = "SELECT username, placename, price, datum, tijd, countryname, id, aprove FROM boeken ORDER BY id ASC";
+          $stmt = $connect->prepare($sql);
+          $stmt -> FetchAll(PDO::FETCH_ASSOC);
+          $stmt->execute();
+          $result = $stmt ->FetchAll(PDO::FETCH_ASSOC);
+        
+        ?>
+        <table>
+        <?php
+        
+             foreach($result as $data) {
+               
+               ?>
+                <tr>
+               <td><?php echo $data['username']; ?> </td>
+               <td><?php echo $data['placename']; ?> </td>
+               <td><?php echo $data['price']; ?> </td>
+               <td><?php echo $data['datum']; ?> </td>
+               <td><?php echo $data['tijd']; ?> </td>
+               <td><?php echo $data['countryname']; ?> </td>
+               <td><?php echo $data['id']; ?> </td>
+               <td><?php echo $data['aprove']; ?> </td>
+                </tr>
+                <?php
+              }
+              ?>
+            </table>
     </main>
   </body>
 </html>

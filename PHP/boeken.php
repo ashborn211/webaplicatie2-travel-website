@@ -3,9 +3,6 @@ require_once('dbconnect.php');
 
 if (isset($_POST["submit"])) {
 
-
-
-
   $username = $_POST['username'];
   $countryname = $_POST['countryname'];
   $placename = $_POST['placename'];
@@ -13,7 +10,7 @@ if (isset($_POST["submit"])) {
   $datum = $_POST['datum'];
   $tijd = $_POST['tijd'];
 
-  $sql = "INSERT  INTO boeken (username, countryname, placename, price, datum, tijd)
+  $sql = "INSERT INTO boeken (username, countryname, placename, price, datum, tijd)
           VALUES (:username, :countryname, :placename, :price, :datum, :tijd)";
 
   $stmt = $connect->prepare($sql);

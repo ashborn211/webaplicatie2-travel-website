@@ -6,26 +6,22 @@
     header('../home.php');
    }
 if(isset($_POST["submit"])){
-    $countryname = $_POST['countryname'];
-   
-    $sql = "INSERT INTO country (naam)
-            VALUES (:countryname)";
+  $country = $_POST['country'];
+  $path = $_POST['path'];
+  $prijs = $_POST['prijs'];
+  $date = $_POST['date'];
+  $name = $_POST['name'];
 
-    $stmt = $connect->prepare($sql);
-    $stmt->bindParam(":countryname", $_POST['countryname']);      
-    $stmt->execute();
-    header("location: create.php");
+  $sql = "INSERT INTO destinations (country, path, prijs, date, name)
+          VALUES (:country, :path, :prijs, :date, :name)";
 
-    $placename = $_POST['placename'];
-    $countryid = $_POST['countryid'];
-   
-    $sql = "INSERT INTO places (name, countryid)
-            VALUES (:placename, :countryid,)";
-
-    $stmt = $connect->prepare($sql);
-    $stmt->bindParam(":countryid", $_POST['countryid']);     
-    $stmt->bindParam(":name", $_POST['placename']);     
-    $stmt->execute();
+  $stmt = $connect->prepare($sql);
+  $stmt->bindParam(":country", $_POST['country']);      
+  $stmt->bindParam(":path", $_POST['path']);      
+  $stmt->bindParam(":prijs", $_POST['prijs']);      
+  $stmt->bindParam(":date", $_POST['date']);      
+  $stmt->bindParam(":name", $_POST['name']);      
+  $stmt->execute();
     header("location: create.php");
 
 }
@@ -55,13 +51,46 @@ if(isset($_POST["submit"])){
     </header>
     <main>
 
-        <form action="" method="post">
-            <input type="countryname" name="countryname" id="" placeholder="countryname">
-            <input type="placename" name="placename" id=""placeholder="placename" >
-            <input type="countryid" name="countryid" id=""placeholder="countryid">
-            <input type="submit" value="login" onClick='return confirmSubmit()'>
-        </form>
+    <form action="" method="post">
+      <input type="country" name="country" id="country" placeholder="country">
+      <input type="path" name="path" id="path" placeholder="path">
+      <input type="name" name="name" id="name" placeholder="name">
+      <input type="prijs" name="prijs" id="prijs" placeholder="prijs">
+      <input type="date" name="date" id="date" placeholder="date">
 
+      <input type="submit" value="submit" name="submit" >
+    </form>
+        <?php
+
+
+
+$sql = "SELECT username, placename, price, datum, tijd, countryname, id, aprove FROM boeken ORDER BY id ASC";
+$stmt = $connect->prepare($sql);
+$stmt -> FetchAll(PDO::FETCH_ASSOC);
+$stmt->execute();
+$result = $stmt ->FetchAll(PDO::FETCH_ASSOC);
+
+?>
+<table>
+<?php
+
+   foreach($result as $data) {
+     
+     ?>
+      <tr>
+     <td><?php echo $data['username']; ?> </td>
+     <td><?php echo $data['placename']; ?> </td>
+     <td><?php echo $data['price']; ?> </td>
+     <td><?php echo $data['datum']; ?> </td>
+     <td><?php echo $data['tijd']; ?> </td>
+     <td><?php echo $data['countryname']; ?> </td>
+     <td><?php echo $data['id']; ?> </td>
+     <td><?php echo $data['aprove']; ?> </td>
+      </tr>
+      <?php
+    }
+    ?>
+  </table>
     </main>
   </body>
 </html>

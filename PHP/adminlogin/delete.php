@@ -5,18 +5,19 @@ include_once('../login-register/loginhelper.php');
 if(isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true){
  
 }
+
+
+
+
+
+
 if(isset($_POST["submit"])){
     $id = $_POST['id'];
-    $countryid = $_POST['countryid'];
-$sql = "DELETE FROM country WHERE ID= :id";
-$stmt = $connect->prepare($sql);
-$stmt->bindParam(":id", $_POST['id']);
-$stmt->execute();
 
-$sql = "DELETE FROM places WHERE ID= :countryid";
-$stmt = $connect->prepare($sql);
-$stmt->bindParam(":countryid", $_POST['countryid']);
-$stmt->execute();
+      $sql = "DELETE FROM boeken WHERE id = :id";
+      $stmt = $connect->prepare($sql);
+      $stmt->bindParam(":id", $_POST['id']);
+      $stmt->execute();
     header("location: delete.php");
 }
 ?>
@@ -44,11 +45,35 @@ $stmt->execute();
     <main>
 
         <form action="" method="post">
-            <input type="id" name="id" id="" placeholder="id">
-            <input type="countryid" name="countryid" id="" placeholder="countryid">
-            <input type="submit" value="delete" onClick='return confirmSubmit()'>
+            <input type="id" name="id" placeholder="id">
+            <input type="submit" value="submit" name="submit" onClick='return confirmSubmit()'>
         </form>
 
+<table>
+<?php
+$sql = "SELECT username, placename, price, datum, tijd, countryname, id, aprove FROM boeken ORDER BY id ASC";
+$stmt = $connect->prepare($sql);
+$stmt -> FetchAll(PDO::FETCH_ASSOC);
+$stmt->execute();
+$result = $stmt ->FetchAll(PDO::FETCH_ASSOC);
+
+   foreach($result as $data) {
+     
+     ?>
+      <tr>
+     <td><?php echo $data['username']; ?> </td>
+     <td><?php echo $data['placename']; ?> </td>
+     <td><?php echo $data['price']; ?> </td>
+     <td><?php echo $data['datum']; ?> </td>
+     <td><?php echo $data['tijd']; ?> </td>
+     <td><?php echo $data['countryname']; ?> </td>
+     <td><?php echo $data['id']; ?> </td>
+     <td><?php echo $data['aprove']; ?> </td>
+      </tr>
+      <?php
+    }
+    ?>
+  </table>
     </main>
   </body>
 </html>
