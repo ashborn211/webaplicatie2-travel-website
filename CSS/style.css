@@ -191,17 +191,50 @@ body div button {
   display: flex;
   justify-content: center;
   flex-direction: row;
+  padding-top: 200px;
 }
 
 .square1 {
-  width: 100px;
-  height: 100px;
+  width: 600px;
+  height: 450px;
   background-color: #06c1bd;
   margin-right: 10px;
 }
 
 .square2 {
-  width: 100px;
-  height: 100px;
+  width: 600px;
+  height: 450px;
   background-color: #000072;
+}
+table {
+  border-collapse: collapse;
+  width: 75%;
+  position: absolute;
+  top: 250px;
+  left: 200px;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  border-radius: 1px;
+  border: 1px solid cyan;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.center-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }

@@ -21,6 +21,34 @@ require_once('dbconnect.php');
 
     </header>
     <main>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+          foreach($result as $data) {
+        ?>
+        <tr>
+          <td><?php echo $data['id']; ?></td>
+          <td><?php echo $data['name']; ?></td>
+          <td><?php echo $data['prijs']; ?></td>
+          <td><?php echo $data['date']; ?></td>
+        </tr>
+        <?php
+          }
+        ?>
+      </tbody>
+    </table>
+  </div>
+  </main>
+</body>
+</html>
     </main>
   </body>
 </html>
