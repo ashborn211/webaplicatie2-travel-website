@@ -44,7 +44,7 @@ body {
 }
 
 /* Full-width input fields */
-input[type="email"],
+input[type="emailadress"],
 input[type="password"],
 input[type="username"] {
   width: 100%;

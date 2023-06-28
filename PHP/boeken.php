@@ -37,16 +37,10 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
-  <header>
-    <a href="home.php"><img src="../IMG/pngwing.com.png" alt="Home" /></a>
-
-    <nav class="top-bar">
-      <div><a href="flights.php">All flights</div></a>
-      <div><a href="boeken.php">boeken</div></a>
-      <div>Schedule</div>
-      <div>Transport and directions</div>
-    </nav>
-    <h1 class="quo">Ready To Fly?</h1>
+<header>
+    <?php
+    include_once('header.php');
+    ?>
   </header>
   <main>
 

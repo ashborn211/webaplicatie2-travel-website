@@ -62,8 +62,8 @@ if(isset($_POST["submit"])){
         <label for="email">Email:</label>
         <input
           type="email"
-          id="email"
-          name="email"
+          id="emailadress"
+          name="emailadress"
           placeholder="Enter your email"
         />
       </div>
@@ -85,9 +85,11 @@ if(isset($_POST["submit"])){
           placeholder="Enter your username"
         />
       </div>
-      <button type="submit">Login</button>
+      <button type="submit" name="submit">submit</button>
+      <button><a href="login.php">Login</a></button>
       <button><a href="loginadmin.php">AdminLogin</a></button>
-      <button><a href="register.php">register</a></button>      </form>
+      <button><a href="register.php">register</a></button>
+      </form>
         
     </main>
   </body>

@@ -34,7 +34,7 @@ require_once('adminhelper.php');
           placeholder="Enter your password"
         />
       </div>
-      <button type="submit">submit</button>
+      <button type="submit" name="submit">submit</button>
       <button><a href="login.php">Login</a></button>
       <button><a href="loginadmin.php">AdminLogin</a></button>
       <button><a href="register.php">register</a></button>
