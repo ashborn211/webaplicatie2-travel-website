@@ -30,14 +30,6 @@ if(isset($_POST["submit"])){
   <body>
     <header>
       <a href="../home.php"><img src="../../IMG/pngwing.com.png" alt="Home"/></a>
-
-      <nav class="top-bar">
-        <div>All flights</div>
-        <div>Schedule</div>
-        <div>Transport and directions</div>
-      </nav>
-
-    </header>
     <main>
 
         <form action="" method="post">

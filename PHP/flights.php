@@ -15,26 +15,12 @@ require_once('dbconnect.php');
     <title>flights</title>
   </head>
   <body>
-    <header>
-      <a href="home.php"><img src="../IMG/pngwing.com.png" alt="Home"/></a>
+  <?php
+    include_once('header.php');
+    ?>
 
-      <nav class="top-bar">
-        <div><a href="flights.php">All flights</div></a>
-        <div><a href="boeken.php">boeken</div></a>
-        <div>Schedule</div>
-        <div>Transport and directions</div>
-      </nav>
-      <h1 class="quo">Ready To Fly?</h1>
-      <button class="login-page"><a href="login-register/login.php">Login</button></a>
     </header>
     <main>
-
-
-
-
-
-
-    
     </main>
   </body>
 </html>

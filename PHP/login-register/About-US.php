@@ -9,16 +9,15 @@
     <title>US</title>
   </head>
   <body>
-    <header>
-      <a href="/PHP/Home.html"
-        ><img src="../IMG/pngwing.com.png" alt="Home"
-      /></a>
-      <nav class="top-bar">
-        <div><a href="All-Flights.html">All flights</div></a>
-        <div><a href="Schedule.html"> Schedule</div></a>
-        <div><a href="About-US.html">About US</div></a>
-      </nav>
-      <a class="login-page" href="Login.html">Login</a>
-    </header>
+  <header>
+    <?php
+    include_once('header.php');
+    ?>
+  </header>
+  <main>
+  <div class="containerU">
+    <div class="square1"></div>
+    <div class="square2"></div>
+  </main>
   </body>
 </html>
