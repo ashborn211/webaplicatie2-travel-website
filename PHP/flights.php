@@ -21,34 +21,36 @@ $result = $stmt ->FetchAll(PDO::FETCH_ASSOC);
     <title>flights</title>
   </head>
   <body>
-  <header>
-    <?php
-    include_once('header.php');
-    ?>
-  </header>
+<?php include_once('header.php');?>
     <main>
 
+    <div class="center-table">
     <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
         <?php
-        
-             foreach($result as $data) {
-               
-               ?>
-                <tr>
-               <td><?php echo $data['id']; ?> </td>
-               <td><?php echo $data['name']; ?> </td>
-               <td><?php echo $data['prijs']; ?> </td>
-               <td><?php echo $data['date']; ?> </td>
-                </tr>
-                <?php
-              }
-              ?>
-            </table>
-
-
-
-
-    
+          foreach($result as $data) {
+        ?>
+        <tr>
+          <td><?php echo $data['id']; ?></td>
+          <td><?php echo $data['name']; ?></td>
+          <td><?php echo $data['prijs']; ?></td>
+          <td><?php echo $data['date']; ?></td>
+        </tr>
+        <?php
+          }
+        ?>
+      </tbody>
+    </table>
+  </div>
+</main>   
     </main>
   </body>
 </html>

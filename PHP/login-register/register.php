@@ -27,12 +27,13 @@ if(isset($_POST["submit"])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../CSS/style.css" />
+
     <title>Home</title>
   </head>
   <body>
   <header>
-      <a href="/PHP/Home.php"
-        ><img src="../IMG/pngwing.com.png" alt="Home"
+  <a href="../Home.php"
+        ><img src="../../IMG/pngwing.com.png" alt="Home"
       /></a>
       <nav class="top-bar">
         <div class="flex-container">

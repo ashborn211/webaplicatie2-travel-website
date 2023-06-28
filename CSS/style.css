@@ -160,6 +160,37 @@ body div button {
   cursor: pointer;
   width: 50%;
 }
+
+table {
+  border-collapse: collapse;
+  width: 75%;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  border-radius: 1px;
+  border: 1px solid cyan;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.center-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 @-webkit-keyframes animatezoom {
   from {
     -webkit-transform: scale(0);
