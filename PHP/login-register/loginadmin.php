@@ -13,37 +13,31 @@ require_once('adminhelper.php');
   </head>
   <body>
   <header>
-  <a href="../Home.php"
-        ><img src="../../IMG/pngwing.com.png" alt="Home"
-      /></a>
-      <nav class="top-bar">
-        <div class="flex-container">
-          <a href="All-Flights.php"><button>All flights</button></a>
-        </div>
-        <div class="flex-container">
-          <a href="Schedule.php"><button>Schedule</button></a>
-        </div>
-        <div class="flex-container">
-          <a href="About-US.php"><button>About US</button></a>
-        </div>
-        <div class="flex-container">
-          <a href="Contact.php"><button>Contact</button></a>
-        </div>
-      </nav>
-
-      <a class="login-page" href="./login-register/login.php"
-        ><button>Login</button></a
-      >
-    </header>
+  <a href="../home.php"><img src="../../IMG/pngwing.com.png" alt="Home" /></a>
+  <nav class="top-bar">
+    <div class="flex-container">
+      <a href="../flights.php"><button>All flights</button></a>
+    </div>
+    <div class="flex-container">
+      <a href="../boeken.php"><button>boeken</button></a>
+    </div>
+    <div class="flex-container">
+      <a href="../About-US.php"><button>About US</button></a>
+    </div>
+    <div class="flex-container">
+      <a href="../contact.php"><button>Contact</button></a>
+    </div>
+  </nav>
+</header>
   <form action="" method="post">
     <div class="login-box">
       <h2>admin Login</h2>
       <div class="input-field">
         <label for="email">Email:</label>
         <input
-          type="email"
-          id="email"
-          name="email"
+          type="emailadress"
+          id="emailadress"
+          name="emailadress"
           placeholder="Enter your email"
         />
       </div>

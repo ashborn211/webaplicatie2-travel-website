@@ -60,37 +60,7 @@ if(isset($_POST["submit"])){
 
       <input type="submit" value="submit" name="submit" >
     </form>
-        <?php
-
-
-
-$sql = "SELECT username, placename, price, datum, tijd, countryname, id, aprove FROM boeken ORDER BY id ASC";
-$stmt = $connect->prepare($sql);
-$stmt -> FetchAll(PDO::FETCH_ASSOC);
-$stmt->execute();
-$result = $stmt ->FetchAll(PDO::FETCH_ASSOC);
-
-?>
-<table>
-<?php
-
-   foreach($result as $data) {
-     
-     ?>
-      <tr>
-     <td><?php echo $data['username']; ?> </td>
-     <td><?php echo $data['placename']; ?> </td>
-     <td><?php echo $data['price']; ?> </td>
-     <td><?php echo $data['datum']; ?> </td>
-     <td><?php echo $data['tijd']; ?> </td>
-     <td><?php echo $data['countryname']; ?> </td>
-     <td><?php echo $data['id']; ?> </td>
-     <td><?php echo $data['aprove']; ?> </td>
-      </tr>
-      <?php
-    }
-    ?>
-  </table>
+ 
     </main>
   </body>
 </html>

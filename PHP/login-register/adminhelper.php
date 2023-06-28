@@ -14,10 +14,10 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
             if($_POST['password'] == ""){
                 echo 'password can\'t be empty <br>';
             }
-            if($_POST['email'] == "admin@gmail.com" && $_POST['password'] == "12345"){
+            if($_POST['emailadress'] == "admin@gmail.com" && $_POST['password'] == "12345"){
                 echo 'hello admin';
                 
-                header("Location: http://localhost/webaplicatie2-travel/webaplicatie2-travel-website/PHP/adminlogin/create.php");
+                header("Location: ../adminlogin/create.php");
             }
         }
        

@@ -160,37 +160,6 @@ body div button {
   cursor: pointer;
   width: 50%;
 }
-
-table {
-  border-collapse: collapse;
-  width: 75%;
-}
-
-th,
-td {
-  padding: 8px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-  border-radius: 1px;
-  border: 1px solid cyan;
-}
-
-th {
-  background-color: #4caf50;
-  color: white;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-.center-table {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 @-webkit-keyframes animatezoom {
   from {
     -webkit-transform: scale(0);
@@ -218,4 +187,55 @@ tr:nth-child(even) {
   .cancelbtn {
     width: 100%;
   }
+}
+.containerU {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding-top: 200px;
+}
+
+.square1 {
+  width: 600px;
+  height: 450px;
+  background-color: #06c1bd;
+  margin-right: 10px;
+}
+
+.square2 {
+  width: 600px;
+  height: 450px;
+  background-color: #000072;
+}
+table {
+  border-collapse: collapse;
+  width: 75%;
+  position: absolute;
+  top: 250px;
+  left: 200px;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  border-radius: 1px;
+  border: 1px solid cyan;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.center-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
