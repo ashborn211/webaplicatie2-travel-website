@@ -6,26 +6,43 @@ $stmt -> FetchAll(PDO::FETCH_ASSOC);
 $stmt->execute();
 $result = $stmt ->FetchAll(PDO::FETCH_ASSOC);
 if (isset($_POST["submit"])) {
+  $username = $_POST['username'];
+  $datum = $_POST['startdatum'];
+  $datum = $_POST['einddatum'];
+
+  $sql = "SELECT * FROM boeken WHERE startdatum >= :startdatum AND startdatum <= :startdatum
+    OR :einddatum >= einddatum AND :startdatum <= einddatum";
+    $stmt = $connect->prepare($sql);
+    $stmt->bindParam(':startdatum', $_POST['startdatum']);
+    $stmt->bindParam(':einddatum', $_POST['einddatum']);
+    $stmt->bindParam(':username', $_POST['username']);
+    $stmt->execute();
+    $data = $stmt->fetchAll();
+    var_dump($data);
+    if ($data == null) {
 
   $username = $_POST['username'];
   $countryname = $_POST['countryname'];
   $placename = $_POST['placename'];
   $price = $_POST['price'];
-  $datum = $_POST['datum'];
+  $datum = $_POST['startdatum'];
+  $datum = $_POST['einddatum'];
   $tijd = $_POST['tijd'];
 
-  $sql = "INSERT INTO boeken (username, countryname, placename, price, datum, tijd)
-          VALUES (:username, :countryname, :placename, :price, :datum, :tijd)";
+  $sql = "INSERT INTO boeken (username, countryname, placename, price, startdatum, tijd, einddatum)
+          VALUES (:username, :countryname, :placename, :price, :startdatum, :tijd, :einddatum)";
 
   $stmt = $connect->prepare($sql);
   $stmt->bindParam(":username", $_POST['username']);      
   $stmt->bindParam(":countryname", $_POST['countryname']);      
   $stmt->bindParam(":placename", $_POST['placename']);      
   $stmt->bindParam(":price", $_POST['price']);      
-  $stmt->bindParam(":datum", $_POST['datum']);      
+  $stmt->bindParam(":datum", $_POST['startdatum']);   
+  $stmt->bindParam(":datum", $_POST['einddatum']);         
   $stmt->bindParam(":tijd", $_POST['tijd']);      
   $stmt->execute();
   header("location: boeken.php");
+  }
 }
 ?>
 
@@ -54,7 +71,8 @@ if (isset($_POST["submit"])) {
       <input type="countryname" name="countryname" id="countryname" placeholder="countryname">
       <input type="place" name="placename" id="place" placeholder="place">
       <input type="price" name="price" id="price" placeholder="price">
-      <input type="date" name="datum" id="datum" placeholder="datum">
+      <input type="date" name="startdatum" id="datum" placeholder="startdatum">
+      <input type="date" name="einddatum" id="datum" placeholder="einddatum">
       <input type="time" name="tijd" id="tijd" placeholder="tijd">
 
       <input type="submit" value="submit" name="submit" >
