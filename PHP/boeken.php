@@ -37,8 +37,8 @@ if (isset($_POST["submit"])) {
   $stmt->bindParam(":countryname", $_POST['countryname']);      
   $stmt->bindParam(":placename", $_POST['placename']);      
   $stmt->bindParam(":price", $_POST['price']);      
-  $stmt->bindParam(":datum", $_POST['startdatum']);   
-  $stmt->bindParam(":datum", $_POST['einddatum']);         
+  $stmt->bindParam(":startdatum", $_POST['startdatum']);   
+  $stmt->bindParam(":einddatum", $_POST['einddatum']);         
   $stmt->bindParam(":tijd", $_POST['tijd']);      
   $stmt->execute();
   header("location: boeken.php");
