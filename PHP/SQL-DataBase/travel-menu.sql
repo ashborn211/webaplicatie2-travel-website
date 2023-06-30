@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 30 jun 2023 om 08:45
+-- Gegenereerd op: 30 jun 2023 om 11:12
 -- Serverversie: 10.4.28-MariaDB
 -- PHP-versie: 8.2.4
 
@@ -48,14 +48,13 @@ INSERT INTO `adminaccount` (`username`, `emailadress`, `password`, `id`) VALUES
 --
 
 CREATE TABLE `boeken` (
-  `username` varchar(255) NOT NULL,
-  `countryname` varchar(255) NOT NULL,
-  `placename` varchar(255) NOT NULL,
   `startdatum` date NOT NULL,
   `tijd` time NOT NULL,
-  `price` varchar(255) NOT NULL,
   `id` int(255) NOT NULL,
   `aprove` varchar(255) NOT NULL,
+  `destination_id` int(11) NOT NULL,
+  `users_id` int(11) NOT NULL,
+  `persons` int(11) NOT NULL,
   `einddatum` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -63,8 +62,11 @@ CREATE TABLE `boeken` (
 -- Gegevens worden geëxporteerd voor tabel `boeken`
 --
 
-INSERT INTO `boeken` (`username`, `countryname`, `placename`, `startdatum`, `tijd`, `price`, `id`, `aprove`, `einddatum`) VALUES
-('velican009', 'japan', 'tokyo', '2023-06-01', '12:02:00', '199', 4, '', '0000-00-00');
+INSERT INTO `boeken` (`startdatum`, `tijd`, `id`, `aprove`, `destination_id`, `users_id`, `persons`, `einddatum`) VALUES
+('2023-06-01', '12:02:00', 4, '', 4, 1, 0, '0000-00-00'),
+('0000-00-00', '00:00:00', 6, '', 3, 3, 2, '0000-00-00'),
+('2222-02-22', '11:11:00', 8, '', 3, 1, 2, '1111-11-11'),
+('2002-07-20', '20:10:00', 9, '', 3, 1, 2, '2002-07-30');
 
 -- --------------------------------------------------------
 
@@ -171,7 +173,6 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`username`, `emailadress`, `password`, `id`) VALUES
 ('josh123', 'josh@gmail.com', 'josh009@', 1),
-('admin', 'admin@gmail.com', 'admin1234', 2),
 ('admin@gmail.com', 'jake@gmail.com', '12345', 3);
 
 --
@@ -228,7 +229,7 @@ ALTER TABLE `adminaccount`
 -- AUTO_INCREMENT voor een tabel `boeken`
 --
 ALTER TABLE `boeken`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT voor een tabel `country`
