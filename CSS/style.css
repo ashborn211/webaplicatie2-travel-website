@@ -47,7 +47,7 @@ body {
 input[type="email"],
 input[type="password"] {
   width: 100%;
-  padding: 12px 20px;
+  padding: 12px 15px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
@@ -133,16 +133,16 @@ span.psw {
 
 .login-box {
   width: 50%;
-  height: 60%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgb(207, 0, 0);
+  border: 1px solid rgb(0, 179, 207);
   border-radius: 10% / 50%;
   position: absolute;
-  top: 150px;
-  left: 500px;
+  top: 100px;
+  left: 400px;
   /* Add any other desired styles */
 }
 
@@ -159,6 +159,68 @@ body div button {
   cursor: pointer;
   width: 50%;
 }
+
+.containerU {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding-top: 200px;
+}
+
+.square1 {
+  width: 600px;
+  height: 450px;
+  background-color: #06c1bd;
+  margin-right: 10px;
+}
+
+.square2 {
+  width: 600px;
+  height: 450px;
+  background-color: #000072;
+}
+table {
+  border-collapse: collapse;
+  width: 75%;
+  position: absolute;
+  top: 250px;
+  left: 200px;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  border-radius: 1px;
+  border: 1px solid cyan;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.center-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+video {
+  height: 100px;
+  width: 50px;
+  position: absolute;
+}
+
+center {
+  font-size: xx-large;
+}
+
 @-webkit-keyframes animatezoom {
   from {
     -webkit-transform: scale(0);
@@ -178,12 +240,56 @@ body div button {
 }
 
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 500px) {
   span.psw {
     display: block;
     float: none;
   }
   .cancelbtn {
     width: 100%;
+  }
+  header img {
+    height: 40px;
+    width: 40px;
+    position: static;
+    margin-right: 10px;
+  }
+
+  header nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    position: static;
+    right: 0;
+  }
+
+  header nav div {
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  .quo {
+    font-size: x-large;
+    position: static;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .login-page {
+    position: static;
+    right: 0;
+  }
+
+  .login-box {
+    width: 90%;
+    height: auto;
+    position: static;
+    top: 0;
+    left: 0;
+    margin-top: 20px;
+    border: none;
+    border-radius: 0;
   }
 }
