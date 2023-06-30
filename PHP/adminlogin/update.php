@@ -80,9 +80,15 @@ if(isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true){
         </form>
         <?php
 
+          $sql =" SELECT 
+                destinations.id as destination_id, destinations.name as destinations_name, destinations.prijs as destinations_prijs,
+                users.id as users_id, users.username as users_username, users.emailadress as users_emailadress,
+                boeken.startdatum as boeken_startdatum, boeken.persons as boeken_persons, boeken.aprove as boeken_aprove
+          FROM boeken
+          INNER JOIN destinations ON destinations.id = boeken.destination_id
+          INNER JOIN users ON users.id = boeken.users_id";
 
-
-          $sql = "SELECT username, placename, price, datum, tijd, countryname, id, aprove FROM boeken ORDER BY id ASC";
+          //$sql = "SELECT username, placename, price, datum, tijd, countryname, id, aprove FROM boeken ORDER BY id ASC";
           $stmt = $connect->prepare($sql);
           $stmt -> FetchAll(PDO::FETCH_ASSOC);
           $stmt->execute();
@@ -91,19 +97,20 @@ if(isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == true){
         ?>
         <table>
         <?php
-        
+        var_dump($result);
              foreach($result as $data) {
                
                ?>
                 <tr>
-               <td><?php echo $data['username']; ?> </td>
-               <td><?php echo $data['placename']; ?> </td>
-               <td><?php echo $data['price']; ?> </td>
-               <td><?php echo $data['datum']; ?> </td>
-               <td><?php echo $data['tijd']; ?> </td>
-               <td><?php echo $data['countryname']; ?> </td>
-               <td><?php echo $data['id']; ?> </td>
-               <td><?php echo $data['aprove']; ?> </td>
+               <td><?php echo $data['destination_id']; ?> </td>
+               <td><?php echo $data['destinations_name']; ?> </td>
+               <td><?php echo $data['destinations_prijs']; ?> </td>
+               <td><?php echo $data['users_id']; ?> </td>
+               <td><?php echo $data['users_username']; ?> </td>
+               <td><?php echo $data['users_emailadress']; ?> </td>
+               <td><?php echo $data['boeken_startdatum']; ?> </td>
+               <td><?php echo $data['boeken_persons']; ?> </td>
+               <td><?php echo $data['boeken_aprove']; ?> </td>
                 </tr>
                 <?php
               }

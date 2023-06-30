@@ -12,6 +12,7 @@ foreach ($data as $row){
 
             $_SESSION['LOGGED_IN'] = true;
             $_SESSION['username'] = $row['username'];
+            $_SESSION['users_id'] = $row['id'];
             echo 'succes';
         }
             if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emailadress'])){

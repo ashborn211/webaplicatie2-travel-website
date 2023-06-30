@@ -1,12 +1,13 @@
 <?php
 require_once('dbconnect.php');
+
 $sql = "SELECT id, name, prijs, date, path FROM destinations ORDER BY id ASC";
 $stmt = $connect->prepare($sql);
 $stmt -> FetchAll(PDO::FETCH_ASSOC);
 $stmt->execute();
 $result = $stmt ->FetchAll(PDO::FETCH_ASSOC);
 if (isset($_POST["submit"])) {
-  $username = $_POST['username'];
+  $username = $_POST['users_id'];
   $datum = $_POST['startdatum'];
   $datum = $_POST['einddatum'];
 
@@ -15,29 +16,28 @@ if (isset($_POST["submit"])) {
     $stmt = $connect->prepare($sql);
     $stmt->bindParam(':startdatum', $_POST['startdatum']);
     $stmt->bindParam(':einddatum', $_POST['einddatum']);
-    $stmt->bindParam(':username', $_POST['username']);
+    $stmt->bindParam(':users_id', $_POST['users_id']);
     $stmt->execute();
     $data = $stmt->fetchAll();
     var_dump($data);
     if ($data == null) {
 
-  $username = $_POST['username'];
-  $countryname = $_POST['countryname'];
-  $placename = $_POST['placename'];
-  $price = $_POST['price'];
+
   $datum = $_POST['startdatum'];
   $datum = $_POST['einddatum'];
   $tijd = $_POST['tijd'];
+  $destination_id = $_POST['destination_id'];
+  $users_id = $_POST['users_id'];
+  $users_id = $_POST['persons'];
 
-  $sql = "INSERT INTO boeken (username, countryname, placename, price, startdatum, tijd, einddatum)
-          VALUES (:username, :countryname, :placename, :price, :startdatum, :tijd, :einddatum)";
+  $sql = "INSERT INTO boeken (startdatum, tijd, einddatum, destination_id, users_id, persons)
+          VALUES (:startdatum, :tijd, :einddatum, :destination_id, :users_id, :persons)";
 
-  $stmt = $connect->prepare($sql);
-  $stmt->bindParam(":username", $_POST['username']);      
-  $stmt->bindParam(":countryname", $_POST['countryname']);      
-  $stmt->bindParam(":placename", $_POST['placename']);      
-  $stmt->bindParam(":price", $_POST['price']);      
-  $stmt->bindParam(":startdatum", $_POST['startdatum']);   
+  $stmt = $connect->prepare($sql);  
+  $stmt->bindParam(":startdatum", $_POST['startdatum']);  
+  $stmt->bindParam(":destination_id", $_POST['destination_id']);   
+  $stmt->bindParam(":users_id", $_POST['users_id']);   
+  $stmt->bindParam(":persons", $_POST['persons']);    
   $stmt->bindParam(":einddatum", $_POST['einddatum']);         
   $stmt->bindParam(":tijd", $_POST['tijd']);      
   $stmt->execute();
@@ -67,12 +67,11 @@ if (isset($_POST["submit"])) {
   <main>
 
     <form action="" method="post">
-      <input type="user" name="username" id="username" placeholder="username">
-      <input type="countryname" name="countryname" id="countryname" placeholder="countryname">
-      <input type="place" name="placename" id="place" placeholder="place">
-      <input type="price" name="price" id="price" placeholder="price">
       <input type="date" name="startdatum" id="datum" placeholder="startdatum">
       <input type="date" name="einddatum" id="datum" placeholder="einddatum">
+      <input type="destination" name="destination_id" id="datum" placeholder="destination_id" value="<?php echo $_GET['destination_id'];?>">
+      <input type="users" name="users_id" id="datum" placeholder="users_id" value="<?php echo $_SESSION['users_id'];?>">
+      <input type="persons" name="persons" id="datum" placeholder="persons">
       <input type="time" name="tijd" id="tijd" placeholder="tijd">
 
       <input type="submit" value="submit" name="submit" >

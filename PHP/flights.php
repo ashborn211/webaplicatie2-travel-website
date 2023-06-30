@@ -33,6 +33,7 @@ $result = $stmt ->FetchAll(PDO::FETCH_ASSOC);
           <th>Name</th>
           <th>Price</th>
           <th>Date</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -44,6 +45,7 @@ $result = $stmt ->FetchAll(PDO::FETCH_ASSOC);
           <td><?php echo $data['name']; ?></td>
           <td><?php echo $data['prijs']; ?></td>
           <td><?php echo $data['date']; ?></td>
+          <td><a href="boeken.php?destination_id=<?php echo $data['id'] ; ?>">book</a></td>
         </tr>
         <?php
           }
